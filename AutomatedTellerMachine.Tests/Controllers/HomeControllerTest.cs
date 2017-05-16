@@ -50,5 +50,18 @@ namespace AutomatedTellerMachine.Tests.Controllers
             // Assert
             Assert.IsNotNull(result);
         }
+
+        [TestMethod]
+        public void ContactFormSaysThanks()
+        {
+            // Arrange
+            var homeController = new HomeController();
+
+            // Act
+            var result = homeController.Contact("I love your bank.") as ViewResult;
+
+            // Assert
+            Assert.IsNotNull(result.ViewBag.TheMessage);
+        }
     }
 }
