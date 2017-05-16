@@ -5,6 +5,7 @@ using System.Text;
 using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AutomatedTellerMachine;
+using AutomatedTellerMachine.Models;
 using AutomatedTellerMachine.Controllers;
 
 namespace AutomatedTellerMachine.Tests.Controllers
@@ -62,6 +63,24 @@ namespace AutomatedTellerMachine.Tests.Controllers
 
             // Assert
             Assert.IsNotNull(result.ViewBag.TheMessage);
+        }
+
+        [TestMethod]
+        public void BalanceIsCorrectAfterDeposit()
+        {
+            // Arrange
+            var fakeDb = new FakeApplicationDbContext();
+            fakeDb.CheckingAccounts = new FakeDbSet<CheckingAccount>();
+            var checkingAccount = new CheckingAccount { Id = 1, AccountNumber = "000123TEST", Balance = 0 };
+            fakeDb.CheckingAccounts.Add(checkingAccount);
+            fakeDb.Transactions = new FakeDbSet<Transaction>();
+            var transactionController = new TransactionController(fakeDb);
+
+            // Act
+            transactionController.Deposit(new Transaction { CheckingAccountId = 1, Amount = 25 });
+
+            // Assert
+            Assert.AreEqual(25, checkingAccount.Balance);
         }
     }
 }
