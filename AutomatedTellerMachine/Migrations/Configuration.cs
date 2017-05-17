@@ -14,6 +14,7 @@ namespace AutomatedTellerMachine.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
             ContextKey = "AutomatedTellerMachine.Models.ApplicationDbContext";
         }
 
@@ -32,20 +33,20 @@ namespace AutomatedTellerMachine.Migrations
                 userManager.AddToRole(user.Id, "Admin");
             }
 
-            context.Transactions.Add(new Transaction { Amount = 75, CheckingAccountId = 5 });
-            context.Transactions.Add(new Transaction { Amount = 25, CheckingAccountId = 5 });
-            context.Transactions.Add(new Transaction { Amount = 3213.89m, CheckingAccountId = 5 });
-            context.Transactions.Add(new Transaction { Amount = 32.54m, CheckingAccountId = 5 });
-            context.Transactions.Add(new Transaction { Amount = -45, CheckingAccountId = 5 });
-            context.Transactions.Add(new Transaction { Amount = -377, CheckingAccountId = 5 });
-            context.Transactions.Add(new Transaction { Amount = 24.78m, CheckingAccountId = 5 });
-            context.Transactions.Add(new Transaction { Amount = 145, CheckingAccountId = 5 });
-            context.Transactions.Add(new Transaction { Amount = 278, CheckingAccountId = 5 });
-            context.Transactions.Add(new Transaction { Amount = -255, CheckingAccountId = 5 });
-            context.Transactions.Add(new Transaction { Amount = -1.57m, CheckingAccountId = 5 });
-            context.Transactions.Add(new Transaction { Amount = 2478, CheckingAccountId = 5 });
-            context.Transactions.Add(new Transaction { Amount = -600, CheckingAccountId = 5 });
-            context.Transactions.Add(new Transaction { Amount = -.07m, CheckingAccountId = 5 });
+            //context.Transactions.Add(new Transaction { Amount = 75, CheckingAccountId = 5 });
+            //context.Transactions.Add(new Transaction { Amount = 25, CheckingAccountId = 5 });
+            //context.Transactions.Add(new Transaction { Amount = 3213.89m, CheckingAccountId = 5 });
+            //context.Transactions.Add(new Transaction { Amount = 32.54m, CheckingAccountId = 5 });
+            //context.Transactions.Add(new Transaction { Amount = -45, CheckingAccountId = 5 });
+            //context.Transactions.Add(new Transaction { Amount = -377, CheckingAccountId = 5 });
+            //context.Transactions.Add(new Transaction { Amount = 24.78m, CheckingAccountId = 5 });
+            //context.Transactions.Add(new Transaction { Amount = 145, CheckingAccountId = 5 });
+            //context.Transactions.Add(new Transaction { Amount = 278, CheckingAccountId = 5 });
+            //context.Transactions.Add(new Transaction { Amount = -255, CheckingAccountId = 5 });
+            //context.Transactions.Add(new Transaction { Amount = -1.57m, CheckingAccountId = 5 });
+            //context.Transactions.Add(new Transaction { Amount = 2478, CheckingAccountId = 5 });
+            //context.Transactions.Add(new Transaction { Amount = -600, CheckingAccountId = 5 });
+            //context.Transactions.Add(new Transaction { Amount = -.07m, CheckingAccountId = 5 });
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
