@@ -59,7 +59,7 @@ namespace AutomatedTellerMachine.Tests.Controllers
             var homeController = new HomeController();
 
             // Act
-            var result = homeController.Contact("I love your bank.") as ViewResult;
+            var result = homeController.Contact("I love your bank.") as PartialViewResult;
 
             // Assert
             Assert.IsNotNull(result.ViewBag.TheMessage);
