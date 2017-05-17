@@ -31,6 +31,8 @@ namespace AutomatedTellerMachine.Models
         public IDbSet<CheckingAccount> CheckingAccounts { get; set; }
 
         public IDbSet<Transaction> Transactions { get; set; }
+
+        //public System.Data.Entity.DbSet<AutomatedTellerMachine.Models.ApplicationUser> ApplicationUsers { get; set; }
     }
 
     public class FakeApplicationDbContext : IApplicationDbContext
